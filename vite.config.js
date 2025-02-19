@@ -5,12 +5,14 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), sentryVitePlugin({
-    base: "/Apple-website",
+    base: "/Apple-website/",
     org: "jsm-eu",
     project: "javascript-react"
   })],
 
   build: {
-    sourcemap: true
+    sourcemap: true,
+    outDir: "dist",         // Ensure the output folder is "dist"
+    assetsDir: "assets"     // Keep assets inside dist/assets
   }
 })
